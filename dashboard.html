@@ -1,0 +1,456 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="welcome-section">
+        <h2>Welcome back, {{ username }}!</h2>
+        <p class="subheading">Your voice matters in addressing Agbogbloshie's cost of living challenges</p>
+    </div>
+
+    <div class="dashboard-content">
+        <div class="main-content">
+            <div class="community-updates">
+                <h3>Latest Community Discussions</h3>
+                
+                <div class="blog-post">
+                    <div class="post-header">
+                        <img src="{{ url_for('static', filename='images/user-avatar1.jpg') }}" alt="User avatar" class="post-avatar">
+                        <div class="post-meta">
+                            <span class="post-author">Kofi Mensah</span>
+                            <span class="post-date">Posted 2 hours ago</span>
+                        </div>
+                    </div>
+                    <h4 class="post-title">Food Prices Have Doubled in Agbogbloshie Market</h4>
+                    <p class="post-excerpt">The cost of basic food items like kenkey, fish, and vegetables has increased dramatically over the past month. How are other community members coping with these price hikes?</p>
+                    <div class="post-stats">
+                        <span class="stat">💬 24 comments</span>
+                        <span class="stat">👍 38 reactions</span>
+                    </div>
+                </div>
+
+                <div class="blog-post">
+                    <div class="post-header">
+                        <img src="{{ url_for('static', filename='images/user-avatar2.jpg') }}" alt="User avatar" class="post-avatar">
+                        <div class="post-meta">
+                            <span class="post-author">Ama Asante</span>
+                            <span class="post-date">Posted 1 day ago</span>
+                        </div>
+                    </div>
+                    <h4 class="post-title">Rent Increases Making Life Difficult for Families</h4>
+                    <p class="post-excerpt">My landlord just increased our rent by 40% with only one month's notice. Many families in our community are facing similar challenges. What can we do collectively?</p>
+                    <div class="post-stats">
+                        <span class="stat">💬 42 comments</span>
+                        <span class="stat">👍 67 reactions</span>
+                    </div>
+                </div>
+
+                <div class="blog-post">
+                    <div class="post-header">
+                        <img src="{{ url_for('static', filename='images/user-avatar3.jpg') }}" alt="User avatar" class="post-avatar">
+                        <div class="post-meta">
+                            <span class="post-author">Kwame Adjei</span>
+                            <span class="post-date">Posted 3 days ago</span>
+                        </div>
+                    </div>
+                    <h4 class="post-title">Community Gardening Initiative - Join Us!</h4>
+                    <p class="post-excerpt">We're starting a community garden behind the school to grow our own vegetables and reduce food costs. Volunteers needed this Saturday morning. Bring your own tools if possible!</p>
+                    <div class="post-stats">
+                        <span class="stat">💬 18 comments</span>
+                        <span class="stat">👍 52 reactions</span>
+                    </div>
+                </div>
+
+                <a href="#" class="see-more-btn">See more discussions</a>
+            </div>
+
+            <div class="create-post">
+                <h3>Share Your Experience</h3>
+                <div class="post-form">
+                    <textarea placeholder="What's on your mind? Share how the high cost of living is affecting you..."></textarea>
+                    <div class="form-actions">
+                        <button class="add-photo-btn">📷 Add Photo</button>
+                        <button class="submit-post-btn">Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-widget">
+                <h3>Cost of Living Stats</h3>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-label">Food Inflation</span>
+                        <span class="stat-value">+27%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Transport Costs</span>
+                        <span class="stat-value">+15%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Average Rent</span>
+                        <span class="stat-value">+35%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Upcoming Events</h3>
+                <div class="event">
+                    <h4>Community Meeting on Housing</h4>
+                    <p class="event-date">Saturday, March 12 · 10:00 AM</p>
+                    <p class="event-location">Agbogbloshie Community Center</p>
+                </div>
+                <div class="event">
+                    <h4>Protest Against Price Gouging</h4>
+                    <p class="event-date">Wednesday, March 16 · 2:00 PM</p>
+                    <p class="event-location">Assembly Point: Market Square</p>
+                </div>
+                <a href="#" class="see-events-btn">View all events</a>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Cost-Saving Tips</h3>
+                <ul class="tips-list">
+                    <li>Buy food in bulk with neighbors</li>
+                    <li>Use public wells instead of buying water</li>
+                    <li>Share transportation to markets</li>
+                    <li>Grow vegetables in containers</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Community Resources</h3>
+                <div class="resources">
+                    <a href="#" class="resource-link">Food Assistance Programs</a>
+                    <a href="#" class="resource-link">Emergency Housing Support</a>
+                    <a href="#" class="resource-link">Community Savings Group</a>
+                    <a href="#" class="resource-link">Local Price Comparison Guide</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-footer">
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+</div>
+
+<style>
+    .dashboard {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .welcome-section {
+        background: linear-gradient(135deg, #2c3e50 0%, #4a6580 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 10px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .welcome-section h2 {
+        margin: 0 0 10px 0;
+        font-size: 28px;
+    }
+
+    .subheading {
+        margin: 0;
+        opacity: 0.9;
+        font-size: 16px;
+    }
+
+    .dashboard-content {
+        display: flex;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .main-content {
+        flex: 2;
+    }
+
+    .sidebar {
+        flex: 1;
+    }
+
+    .community-updates {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+
+    .community-updates h3 {
+        margin-top: 0;
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+    }
+
+    .blog-post {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+    }
+
+    .blog-post:last-child {
+        border-bottom: none;
+    }
+
+    .post-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .post-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+        background-color: #ddd;
+    }
+
+    .post-meta {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .post-author {
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+    .post-date {
+        font-size: 12px;
+        color: #7f8c8d;
+    }
+
+    .post-title {
+        margin: 0 0 10px 0;
+        color: #2c3e50;
+        font-size: 18px;
+    }
+
+    .post-excerpt {
+        margin: 0 0 10px 0;
+        color: #34495e;
+        line-height: 1.5;
+    }
+
+    .post-stats {
+        display: flex;
+        gap: 15px;
+    }
+
+    .stat {
+        font-size: 14px;
+        color: #7f8c8d;
+    }
+
+    .see-more-btn {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .create-post {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .create-post h3 {
+        margin-top: 0;
+        color: #2c3e50;
+    }
+
+    .post-form textarea {
+        width: 100%;
+        height: 100px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        resize: vertical;
+        font-family: inherit;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .add-photo-btn {
+        background: none;
+        border: none;
+        color: #7f8c8d;
+        cursor: pointer;
+        padding: 8px 15px;
+        border-radius: 5px;
+    }
+
+    .add-photo-btn:hover {
+        background: #f5f5f5;
+    }
+
+    .submit-post-btn {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .submit-post-btn:hover {
+        background: #2980b9;
+    }
+
+    .sidebar-widget {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+
+    .sidebar-widget h3 {
+        margin-top: 0;
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+    }
+
+    .stats-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .stat-label {
+        color: #2c3e50;
+    }
+
+    .stat-value {
+        color: #e74c3c;
+        font-weight: 600;
+    }
+
+    .event {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .event:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .event h4 {
+        margin: 0 0 5px 0;
+        color: #2c3e50;
+        font-size: 16px;
+    }
+
+    .event-date, .event-location {
+        margin: 0;
+        font-size: 14px;
+        color: #7f8c8d;
+    }
+
+    .see-events-btn {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #3498db;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .tips-list {
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    .tips-list li {
+        margin-bottom: 8px;
+        color: #2c3e50;
+    }
+
+    .resources {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resource-link {
+        color: #3498db;
+        text-decoration: none;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .resource-link:last-child {
+        border-bottom: none;
+    }
+
+    .resource-link:hover {
+        text-decoration: underline;
+    }
+
+    .dashboard-footer {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .logout-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #e74c3c;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background 0.3s;
+    }
+
+    .logout-btn:hover {
+        background: #c0392b;
+    }
+
+    @media (max-width: 768px) {
+        .dashboard-content {
+            flex-direction: column;
+        }
+        
+        .post-stats {
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+</style>
+{% endblock %}
